@@ -1,0 +1,31 @@
+name: CI
+
+# Lint the shell on every push and pull request. There is nothing to compile and
+# no packages to build here: the build needs Google's proprietary tarballs, which
+# are deliberately never committed (see README "Licensing").
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  shellcheck:
+    name: ShellCheck + syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Syntax check (bash -n)
+        run: |
+          bash -n build.sh
+          for f in lib/*.sh; do bash -n "$f"; done
+
+      - name: ShellCheck
+        # SC1090/SC1091: sources are resolved at runtime via $LIB_DIR.
+        # SC2154/SC2034: AG_*/STAGE/WORK globals are set and consumed across the
+        #                sibling modules, which ShellCheck analyses in isolation.
+        run: shellcheck -e SC1090,SC1091,SC2154,SC2034 build.sh lib/*.sh

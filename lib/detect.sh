@@ -71,8 +71,8 @@ detect_arch() {
   local bin="$1" desc
   desc=$(LC_ALL=C file -b "$bin" 2>/dev/null || true)
   case "$desc" in
-    *x86-64*|*x86_64*)  AG_ARCH_RPM=x86_64;  AG_ARCH_DEB=amd64; AG_ARCH_APPIMAGE=x86_64 ;;
-    *aarch64*|*ARM\ aarch64*) AG_ARCH_RPM=aarch64; AG_ARCH_DEB=arm64; AG_ARCH_APPIMAGE=aarch64 ;;
+    *x86-64*|*x86_64*) AG_ARCH_RPM=x86_64;  AG_ARCH_DEB=amd64; AG_ARCH_APPIMAGE=x86_64 ;;
+    *aarch64*)         AG_ARCH_RPM=aarch64; AG_ARCH_DEB=arm64; AG_ARCH_APPIMAGE=aarch64 ;;
     *) die "unsupported binary architecture: $desc" ;;
   esac
 }

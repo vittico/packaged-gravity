@@ -261,17 +261,14 @@ lib/
 
 ## ☕ Buy me a coffee
 
-If packaged-gravity saved you some time, you can say thanks:
+If packaged-gravity saved you some time, you can say thanks — it's just a tip
+jar, nothing here is gated or paywalled. ❤️
 
 <p>
   <a href="https://www.buymeacoffee.com/vittico">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48">
   </a>
 </p>
-
-> Update the link above to your own [Buy Me a Coffee](https://www.buymeacoffee.com/)
-> handle (it currently points to `vittico`). Not selling anything — just a tip
-> jar. ❤️
 
 ---
 
