@@ -1,0 +1,19 @@
+# Build output
+/dist/
+
+# Input release tarballs — these are Google's proprietary binaries and must not
+# be committed to the repository.
+*.tar.gz
+*.tar.xz
+*.zip
+
+# Downloaded build tools (e.g. appimagetool) cached here
+/.tools/
+
+# Scratch / extraction dirs
+/_extract/
+*.tmp
+
+# Local editor / tooling state
+/.claude/
+.DS_Store
