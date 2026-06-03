@@ -155,7 +155,9 @@ EOF
   # Preserve any upstream licence text shipped in the tarball.
   local lic
   for lic in LICENSE.txt LICENSE LICENSE.electron.txt; do
-    [[ -f "$optdir/$lic" ]] && cp "$optdir/$lic" "$docdir/" 2>/dev/null || true
+    if [[ -f "$optdir/$lic" ]]; then
+      cp "$optdir/$lic" "$docdir/" 2>/dev/null || true
+    fi
   done
 }
 
