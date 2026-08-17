@@ -75,7 +75,7 @@ Categories=$AG_CATEGORIES
 EOF
     if [[ "$AG_PRODUCT" == ide ]]; then
       cat <<EOF
-MimeType=text/plain;inode/directory;
+MimeType=text/plain;inode/directory;x-scheme-handler/antigravity-ide;
 Keywords=antigravity;ide;editor;
 Actions=new-window;
 
